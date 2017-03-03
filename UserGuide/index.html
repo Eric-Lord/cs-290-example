@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Guild Wars 2 User Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+      .linkTitle{text-transform:uppercase;color:#999999;font-weight:600;}
+      .container{padding-top:20px;padding-right:20px;}
+      .anchorLink{color:#005580;cursor: pointer;display:block; }
+      .anchorLink:hover,.anchorLink:focus { text-decoration: none;  background-color: #eeeeee;}
+      .anchorLink {margin-right: -15px; margin-left: -15px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);}
+      .anchorLink {padding: 3px 15px;}
+      .anchorLink {color: #0088cc;text-decoration:nonoe;}
+	  .anchorLink:hover,.anchorLink:focus {color: #005580;}
+      img{margin:20px 0 20px 0;}
+    </style>
+
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  	<script src="bootstrap/js/jquery-3.1.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="bootstrap/js/jquery-scrollto.js"></script>
+
+  	<script>
+	  $(document).ready(function(){
+
+	  	$("#mechanicsContentDiv").hide();
+		$("#itemContentDiv").hide();
+		$("#tradingContentDiv").hide();
+		$("#startContentDiv").hide();
+
+	  	$("#homeLink").click(function() {
+	        $(".menuLink").removeClass("active");
+	        $(this).addClass("active");
+	        $(".pageContentDiv").hide();
+	        $("#homeContentDiv").show();
+	    });
+	    $("#startLink").click(function() {
+	        //set as inactive
+	        $(".menuLink").removeClass("active");
+	        $(this).addClass("active");
+	        $(".pageContentDiv").hide();
+	        $("#startContentDiv").show();
+	    });
+	    $("#btnStartGuide").click(function() {
+	        
+	        $(".pageContentDiv").hide();
+	        $("#startContentDiv").show();
+	    });
+	    $("#btnViewMechanics").click(function() {
+	        
+	        $(".pageContentDiv").hide();
+	        $("#mechanicsContentDiv").show();
+	    });
+	    $("#btnViewItems").click(function() {
+	        
+	        $(".pageContentDiv").hide();
+	        $("#itemContentDiv").show();
+	    });
+	    $("#btnViewTrading").click(function() {
+	        
+	        $(".pageContentDiv").hide();
+	        $("#tradingContentDiv").show();
+	    });
+	    $("#mechanicsLink").click(function() {
+	        $(".menuLink").removeClass("active");
+	        $(this).addClass("active");
+	        $(".pageContentDiv").hide();
+	        $("#mechanicsContentDiv").show();
+	    });
+	    $("#itemsLink").click(function() {
+	        $(".menuLink").removeClass("active");
+	        $(this).addClass("active");
+	        $(".pageContentDiv").hide();
+	        $("#itemContentDiv").show();
+	    });
+	    $("#tradingLink").click(function() {
+	        $(".menuLink").removeClass("active");
+	        $(this).addClass("active");
+	        $(".pageContentDiv").hide();
+	        $("#tradingContentDiv").show();
+	    });
+ 		$(".gameMechanicsLink").click(function() {
+	        $(".pageContentDiv").hide();
+	        $("#mechanicsContentDiv").show();
+	        $(".menuLink").removeClass("active");
+	        $("#mechanicsLink").parent().addClass("active");
+	        var hreflocation = $(this).data('val');
+	        var tag = $("#"+hreflocation+"");
+	        $('html,body').animate({scrollTop: tag.offset().top - 30},'slow');
+	    });
+	    $(".apiitemsLink").click(function() {
+	        $(".pageContentDiv").hide();
+	        $("#itemContentDiv").show();
+	        $(".menuLink").removeClass("active");
+	        $("#itemsLink").parent().addClass("active");
+	        var hreflocation = $(this).data('val');
+	        var tag = $("#"+hreflocation+"");
+	        $('html,body').animate({scrollTop: tag.offset().top - 50},'slow');
+	        
+	    });
+	    $(".apitradingLink").click(function() {
+	        $(".pageContentDiv").hide();
+	        $("#tradingContentDiv").show();
+	        $(".menuLink").removeClass("active");
+	        $("#tradingLink").parent().addClass("active");
+	        var hreflocation = $(this).data('val');
+	        var tag = $("#"+hreflocation+"");
+	        $('html,body').animate({scrollTop: tag.offset().top - 30},'slow');
+
+	    });
+	    
+	  });
+  	
+  </script>
+   </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand"  id="homeLink" href="#">User Guide</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="menuLink"><a id="startLink" href="#">Start</a></li>
+              <li class="menuLink"><a id="mechanicsLink" href="#">Game Mechanics</a></li>
+              <li class="menuLink"><a id="itemsLink" href="#">Items</a></li>
+              <li class="menuLink"><a id="tradingLink" href="#">Trading Post</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+            <span style="margin-left:15px;font-weight:600;">User Guide Quick Links</span>
+            <ul class="nav nav-list" style="margin-top:12px;">
+              <li class="nav-header">API: Game Mechanics</li>
+              <li class="gameMechanicsLink linkItem" data-val='professions'><span class="anchorLink">Professions</span></li>
+			  <li class="gameMechanicsLink linkItem" data-val='skills'><span class="anchorLink">Skills</span></li>
+              <li class="gameMechanicsLink linkItem" data-val='specializations'><span class="anchorLink">Specializations</span></li>
+              <li class="gameMechanicsLink linkItem" data-val='traits'><span class="anchorLink">Traits</span></li>
+              <li class="nav-header">API:Items</li>
+              <li class="apiitemsLink linkItem" data-val='item'><span class="anchorLink">Items</span></li>
+              <li class="apiitemsLink linkItem" data-val='finishers'><span class="anchorLink">Finishers</span></li>
+              <li class="apiitemsLink linkItem" data-val='itemStats'><span class="anchorLink">ItemStats</span></li>
+              <li class="apiitemsLink linkItem" data-val='materials'><span class="anchorLink">Materials</span></li>
+              <li class="apiitemsLink linkItem" data-val='amulets'><span class="anchorLink">PVP/Amulets</span></li>
+              <li class="apiitemsLink linkItem" data-val='recipes'><span class="anchorLink">Recipes</span></li>
+              <li class="apiitemsLink linkItem" data-val='skins'><span class="anchorLink">Skins</span></li>
+              <li class="nav-header">API:Trading Post</li>
+ 			  <li class="apitradingLink linkItem" data-val='listings'><span class="anchorLink">Commerce/Listings</span></li>
+			  <li class="apitradingLink linkItem" data-val='exchange'><span class="anchorLink">Commerce/Exchange</span></li>
+              <li class="apitradingLink linkItem" data-val='prices'><span class="anchorLink">Commerce/Prices</span></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div id="homeContentDiv" class="span9 pageContentDiv">
+          <div class="hero-unit" style="padding:20px 30px 30px 30px;">
+            <h1>Guild Wars 2 User Guide</h1><br>
+            <p>In this guide, I will be demonstrating how to use the Guild Wars 2 (GW2) API. The current documentation for the GW2 API excels at describing the flow of information from parameter passing to return objects, and what each field represents. However, I felt the site lack in two areas specifically. First, I found it difficult to get things up running in my initial pass of the material. It wasn’t clear to me what the base root was for the API until I came across it in an example call. So the documentation would stand to gain in clarity if it included a better ‘getting started’ section. My second impression was that there was no real indication of how these requests would be useful. To elaborate, in most instances you needed an ID to get information about but the process of getting an ID (beyond searching through arrays), wasn’t really explored. So these areas were the focus of this website.</p>
+            <p><a href="#" id="btnStartGuide" class="btn btn-primary btn-large">Get Started &raquo;</a></p>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Game Mechanics</h2>
+              <p>Explore the details that make up the characters of Tyria, including professions, skills, traits, and specializations.</p>
+              <p><a class="btn" id="btnViewMechanics" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Items</h2>
+              <p>Learn about the vast amount of items that characters have access to, and the fundamentals of equipment.<br><br></p>
+              <p><a class="btn" id="btnViewItems" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Trading Post</h2>
+              <p>The game within the game - information about accessing the in-game trading post can be found here.<br><br></p>
+              <p><a class="btn" id="btnViewTrading" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div>
+
+        <div id="startContentDiv" class="span9 pageContentDiv">
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Getting Started</h2>
+              <p>There is a very extensive WIKI for Guild Wars 2 that can be accessed using the following link: <a href="https://wiki.guildwars2.com/wiki/API:2" target="_blank">https://wiki.guildwars2.com/wiki/API:2</a>.  This is where you will find a listing of active endpoints for the API.  The base address for all endpoints is: <strong><em>https://api.guildwars2.com/v2</em></strong>.</p> 
+              <p>The API resources can be acessed in the following way:
+              <ul>
+              <li>A list of resources can be obtained by accessing each endpoint directly</li>
+              <li>A single resource can be obtained by specifying the id query parameter at the base endpoint</li>
+              <li>Multiple resources, as an array of objects, can be obtained by specifying the ids query parameter instead. The query should be in the format of a comma-separated list of identifiers.</li>
+              </ul>
+              </p>
+              <p>The endpoints also support paging where a page size, total number of pages, number of resources on a page, or total number of resources can be specified. Resources can also be returned in the following languages: english, spanish, french, dutch, chinese and korean.</p><br>
+              <p>Here is an example of Javascript code used to make a request to the API to retrieve some data:<br>
+              <div style="width:550px;height:300px;background-color:#E0E0E0;padding:20px">
+              var req = new XMLHttpRequest();<br>
+			  var apiURL = "api.guildwars2.com/v2";<br><br>
+			  req.open('GET', apiURL, true);<br><br>
+			  req.addEventListener('load',function(){<br>
+			  if(req.status >= 200 && req.status < 400)<br>{<br>
+			    var response = JSON.parse(req.responseText);<br>
+			    console.log(response);<br>
+			  } <br>
+			  else {<br>
+			    console.log('Network request error: ' + req.statusText);<br>
+			  }});<br>
+			  req.send();<br><br>
+			  </div><br>
+			  <ul>A few things to note here:
+				  <li>To make a request to the API we will be using XMLHttpRequest object</li>
+				  <li>We will be making an asynhrouous GET request (asynhrouous is specified with the last parameter in the req.open function)</li>
+				  <li>An event handler is created to handle the response received from the api call.</li>
+				  <li>As long as an error did not occur, we should see the object returned in the console. 
+				  	<br>The console is used here for testing purposes to examine the returned object attributes.</li>
+				  <li>With the response object the various attributes can be accessed like this: [object.name].[attribute]</li>
+			  </ul>
+			  There are many resources on the web that can provide more detailed examples on how to make requests and parse the data returned.<br> This guide will focus on Guild Wars 2 specific information.
+              </p>
+              <span class="linkTitle">GW2 API Reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2" target="_blank">Guild Wars 2 API WIKI</a>
+			</div><!--/span-->
+          </div><!--/row-->
+      	</div><!--/span-->
+
+      	<div id="mechanicsContentDiv" class="span9 pageContentDiv">
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Game Mechanics</h2>
+
+              <div id="professions" class="container" style="width:100%;">
+              <span style="font-weight:bold;font-size:16px;">Professions</span>
+              <p>Starting with the most fundamental concept of GW2, we have the profession. Professions dictate the skills, traits, specialization, weapons, and armor a character has access to. There are a total of nine in game, and it is one of the few aspects of your character that cannot be changed after selection</p>
+              <p>The GW2 API is provides a useful command to request information about each professions through the root: <strong>https://api.guildwars2.com/v2/professions</strong>. You then have two options; submitting as is will return a list of all available professions in GW2 - something that might be useful for players new to the game. But more than likely, you will want to know the specifics of a certain class, and this can be done by inserting the class id after the professions root. Consequently, the id is the name of the profession - so if you were to first request the list of all classes, inputting one of those nine entries would return an object containing the details of that particular profession. The object returned will contain some surface details about the profession, including the name, id, and two links to images of the profession’s icon (small and large).</p>
+              <p>We start by calling professions without an id parameter, using the url, <strong>https://api.guildwars2.com/v2/professions</strong>. Doing so returns an array of each of class ids (their names), which should look something like the following:</p>
+              <img src="images/warrior.png" style="width:250px;padding:0 20px;">
+              <p>Now we can input one of these ids as an input to receive an object with details about that class. We will use the Warrior profession in this example, so the call would look like, <strong>https://api.guildwars2.com/v2/professions/Warrior</strong>. This returns: in addition to some surface details (name, id, icon urls), we can now see the which skills, weapons, and training are available to the Warrior. Note that training just describes the sum of all a profession’s skills and traits.</p>
+              <img src="images/objectwarrior.png" style="width:960px;padding:0 20px;">
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/professions" target="_blank">Game Mechanics Professions</a></p>
+			  </div>
+
+              <div id="skills" class="container">
+              <span style="font-weight:bold;font-size:16px;">Skills</span>
+              <p>Moving on, we have skills - the active abilities a character has access to in combat. They vary greatly in purpose, from damage and healing, to mobility and protection. As we’ve learned, the available set of skills is dependent on the chosen profession, though skills themselves can be subcategorized into many groups (as you will see in the example). Keeping with convention, calling: <strong>https://api.guildwars2.com/v2/skills</strong> without appending a skill id to the end, will return an array of all skill ids. However, this is far less useful than the profession equivalent because the skill ids are not their names - they are strings of numbers. This means that you cannot look up a particular skill by name, rather, you plug in one of the entries and get the name/information based on the object returned. The object you get back depends on the type of skill you inputted, though it will always have a name, id, description</p>
+              <p>We could use the url <strong>https://api.guildwars2.com/v2/professions</strong> without a skill id parameter, but it’s not practical given return object consists of a large array of numeric ids without any direct references. So let’s instead work from our Warrior example from the professions section (https://api.guildwars2.com/v2/professions/Warrior). If we expand the skills tab we see a sub array of objects corresponding to Warrior specific skills. If we then expand one of those object we will see the skill id as well as type and slot field - these fields help describe the skill so you can narrow down your search.</p>
+              <img src="images/array.png" style="width:220px;padding:0 20px;">
+              <p>To look at this utility skill (object 30), we use the command: . The object returned to us fleshes out the details; the name of the skill is “Endure Pain” and a brief description is provided. Some important things to note: the facts vary in number and content depending on the skill. Endure Pain, for example, has two facts - a recharge time of 60 seconds, and a duration of 4 seconds.</p>
+			  <img src="images/objectpain.png" style="width:960px;padding:0 20px;">
+			  <p></p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/skills" target="_blank">Game Mechanics Skills</a></p>
+              </div>
+
+			  <div id="specializations" class="container">
+              <span style="font-weight:bold;font-size:16px;">Specializations</span>
+              <p>Now we will take a look at specializations, the passive abilities that define a character. Like skills, specializations are bound to a profession, but they are much fewer in quantity (only five per profession). The API divides specializations and traits into two sections, but in reality, it is difficult to separate them since specializations outline a path of available traits. A character can only have 3 specialization active at any time, but can chose from a variety of traits within the structure.</p>
+			  <p>As per the norm, we can get specializations without the use of an id to return a list of all specializations: <strong>https://api.guildwars2.com/v2/specilizations</strong>. This does suffer from the same problem as skills though, in that ids returned are digits.</p>
+			  <p>With specializations, we again have the ability to call without specifying an id; And while this number is lower that skill and traits (just 45 elements), it still serves us little purpose beyond try and check. So we will once more refer to our Warrior example to show a practical application for this get function. In the traits section, we learned the Last Stand augmented the skill Endure Pain. Now let’s say we want to incorporate this trait into our character’s build, we would first need to find the corresponding specialization line. We noted earlier that the trait object contained a specialization field, and in the case of Last Stand - the specialization id is 22. So our call would be: <strong>https://api.guildwars2.com/v2/specializations/22</strong>.</p>
+			  <img src="images/special1.png" style="width:960px;padding:0 20px;">
+			  <p>So the specialization is called “Defense”, and like all other specializations it contains 12 traits total - 9 minor and 3 major. Major traits are the ones you select (recall that you choose one per tier for a total of 3), whereas minor traits you get automatically. Note, Last Stand is a major trait since it appears under that section. The only other data we have yet to cover is the elite field, and since Defense is not an elite specialization - it gets the type false.</p>
+			  <img src="images/special2.png" style="width:960px;padding:0 20px;">
+			  <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/specializations" target="_blank">Game Mechanics Specializations</a></p>
+			  </div>
+
+			  <div id="traits" class="container">
+              <span style="font-weight:bold;font-size:16px;">Traits</span>
+              <p>We’ve touched on traits already given their closeness with specializations, but we haven’t gone over what they actually do. We stated that specializations are the passive abilities that make up a character, but really, all they do is define traits lines; It’s the traits themselves that grant the effects. Specifically, traits tend to augment a characters attributes or modify their skills in some way - it’s the major source of build diversity in the game. There are three tiers of traits, each with selection of three traits, meaning there are 27 possible combination for each specialization. Again we start with the instance in which no id is provided: <strong>https://api.guildwars2.com/v2/traits</strong>. This will return the corresponding digit ids for all of the traits.</p>
+              <p>As per convention, we can call traits without a trait id parameter, but it suffers from the same unwieldy array as skills (though not quite as large). So again, let’s turn to a more reasonable use for the traits get command - extending from our example skills. In the previous discussion we mentioned that the Endure Pain had a traited fact, meaning there existed some trait that affected the skill in some way. Suppose we wanted to know what that trait was, and more importantly, how it impacted Endure Pain; we could get that information by using the returned trait id in “traited_facts” field as as parameter in our trait call: <strong>https://api.guildwars2.com/v2/traits/1375</strong>.</p>
+              <img src="images/objectlaststand.png" style="width:1060px;padding:0 20px;">
+              <p>We see that the trait is called “Last Stand”, and by the by the description it has two effect. The first is unrelated to the Endure Pain, but the second states that stance durations are increased. Most GW2 players will be familiar with the idea that Endure Pain is a stance but this may not be not apparent to those new to the game. It was mentioned briefly in the description, but we can confirm this for ourselves by looking back at the categories section of the Endure Pain object to see that it is labeled as a stance. Back the the trait object, we see that there is also a fact field present here, and for Endure Pain, one of them specifies the duration increase for stances. Finally we see the specialization id from which the trait is bound to (more on this next).</p>
+              <img src="images/objectstance.png" style="width:960px;padding:0 20px;">
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/traits" target="_blank">Game Mechanics Traits</a></p>
+              </div>
+            </div><!--/span-->
+          </div><!--/row-->
+      	</div><!--/span-->
+
+	  	<div id="itemContentDiv" class="span9 pageContentDiv">
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>API Items</h2>
+              <div id="items" class="container">
+              <span style="font-weight:bold;font-size:16px;">Items</span>
+              <p>In GW2, items refer to any object that a character can have in their inventory. There are many different types of items in the game, from equipment, to consumables, to utilities, and much, much more. In terms of character progression, however, the most important items are weapons and armor (this is a combat game at its core). These items are different in that they can be bound to the character as opposed to just floating in inventory or storage. We’ve learned earlier the types of equipment which could be used certain professions using the corresponding get request, but now we’ll be able to see specific instances of those items that populate the land of Tyria.
+			  <p>The GW2 API provides a get call to access items using the base: <strong>https://api.guildwars2.com/v2/traits</strong>, followed by an item id. You can leave this blank to return a list of all items id in the game - just be warned this is an array of length of more than 56000. </p>
+			  <p>The API’s items request commands offer similar functionality to those under game mechanics, in that the user can chose whether or not to leave the item ID blank. Unfortunately, there is no easy way of going about searching for an item using the API - save for method of exhaustion. However, sites have been created for this very purpose; Searching for an item on the site: <a href="http://gw2wbot.darthmaim.de/smiley/gw2itemsearch.html" target="_blank">http://gw2wbot.darthmaim.de/smiley/gw2itemsearch.html</a> returns the corresponding id, which then can be used in conjunction with the API to get details about that item. For example, let’s say I want some information on a legendary greatsword call Eternity. I find the id through the site provided, which turns out to be 30689. I then plug that value into the item get call, which looks like: <strong>https://api.guildwars2.com/v2/items/30689</strong></p>
+			  <img src="images/item1.png" style="width:850px;padding:0 20px;">
+			  <p>Similar to other entities in GW2, the object returned includes the name, ID, and icon. For items, however, we see a variety of new qualities. First is dealt_skin, which refers to the appearance of equipment. Details is a sub-object containing the equipments stats (i.e. base damage for weapons, defense for armor). Level refers the the level requirement needed to equip and we mentioned before the rarity which is legendary. Eternity is a sword so we know its type is weapon, and lastly vendor_value refers to the price you would get for selling it to an NPC (non-player character). Note that 10,000 may seem like a lot but this is the copper value, meaning you would only get one gold piece (100 copper per silver, 100 silver per gold).</p>
+			  </div>
+			  <p><h3>Here are some additional items that the api provides data for in the item category:</h3></p>
+     		  <span id="finishers" style="font-weight:bold;font-size:16px;">Finishers</span>
+              <p>Defeat your opponents… with style! (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/finishers" target="_blank">Finishers</a></p>
+
+              <span id="itemStats" style="font-weight:bold;font-size:16px;">Item Stats</span>
+              <p>Intra-weapon variety provides a near-limitless possibilities. (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/itemstats" target="_blank">Item Statistics</a></p>
+
+              <span id="materials" style="font-weight:bold;font-size:16px;">Materials</span>
+              <p>Time to get gathering! (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/materials" target="_blank">Maaterials</a></p>
+
+              <span id="amulets" style="font-weight:bold;font-size:16px;">PVP/Amulets</span>
+              <p>Because structured PvP is better PvP. (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/amulets" target="_blank">PVP/Amulets</a></p>
+
+              <span id="recipes" style="font-weight:bold;font-size:16px;">Recipes</span>
+              <p>Not just for cooking! (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/recipes" target="_blank">Recipes</a></p>
+
+              <span id="skins" style="font-weight:bold;font-size:16px;">Skins</span>
+              <p> A.k.a. Fashion Wars 2 (learn more)</p>
+			  <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/skins" target="_blank">Skins</a></p>
+
+            </div><!--/span-->
+          </div><!--/row-->
+      	</div><!--/span-->
+
+      	<div id="tradingContentDiv" class="span9 pageContentDiv">
+          <div class="row-fluid">
+            <div class="span12">
+              <h2>Trading Post</h2>
+              <div id="listings" class="container">
+              <span style="font-weight:bold;font-size:16px;">Commerce/Listings</span>
+              <p>We mentioned before the importance of equipment, but didn’t go over at all the acquisition. Items can be naturally collected by looting enemies, quest rewards, and other means, but the most common and practical way of getting the gear you need is via the trading post. The trading post allows users to post buy and sell orders for certain items allowing other players to sell and buy instantly. The in-game currency is used in these transaction (gold, silver, and copper), which like items, can be acquired through a multitude of ways.</p>
+              <p>The API for the trading post is a bit different from the other sections we’ve covered in that you are not entering an ID that corresponds to a specific buy or sell listing. This is primarily due to the fact that listings are dynamic whereas the information about skills or items are static. So instead the user opts to enter the ID of an item. Leaving this field blank is acceptable, returning a listing for every applicable item on the trading post, though keeping with the leitmotif of this API - it’s seldom useful unless you have some way of rapidly parsing through every entry.</p>
+			  <p>We will continue with the Eternity example from items section. Say you have one in your possession and you want to sell it; you have three options and you want to make the most money. The first option is to sell it to a vendor, which we learned will yield one gold. The other two involve checking the buy and sell listings - which means we will need to access the data in the trading post. So we use the call: reqApi.open("GET", "https://api.guildwars2.com/v2/items/30689", true).</p>
+			  <div style="height:280px;width:60%">
+			  <img src="images/trading1.png" style="float:left;width:250px;padding:0 20px;">
+			  <img src="images/trading2.png" style="float:right;width:230px;padding:0 20px;">
+			  </div>
+			  <p>Each object in the buys and sells arrays corresponds to an item listing. The buy listings are assorted in descending order and the sell listing in ascending order. If we choose to sell instantly we want to sell to the highest buyer, which due to the ordering, will be the first item on the list. We look at the unit_price attribute which holds the value 36410501, meaning we could get 36410501 copper (or 3641 gold) immediately. If you want the best possible deal, you need to be patient and put up a sell listing. Though to be competitive, you need to look at the current sellers and undercut them slightly. So to find the lowest sell listing, we look at the first object in the sells array, which has a unit_price of 44900000 (so 4490 gold). Thus, through the use of this API, we now know the vendor is complete rip-off, and you stand to make almost 850 by making a listing. Of course, since the API is accessing the real market, the prices will vary over a period of time. And as an ending note, there are some items which cannot be sold trading post, and using such an item as parameter will lead to a 404 (not found) error.</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/commerce/listings" target="_blank">Trading Post Listings</a></p>
+              </div>
+              <p><h3>Here are some additional items that the api provides data for in the trading category:</h3></p>
+              <div id="exchange" class="container">
+              <span style="font-weight:bold;font-size:16px;">Commerce/Exchange</span>
+              <p>When you need that economic boost. (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/commerce/exchange" target="_blank">Trading Post Exchange</a></p>
+			  </div>
+
+			  <div id="prices" class="container">
+              <span style="font-weight:bold;font-size:16px;">Commerce/Prices</span>
+              <p>Be a smarter trader! (learn more)</p>
+              <p><span class="linkTitle">GW2 API reference: </span><a href="https://wiki.guildwars2.com/wiki/API:2/commerce/prices" target="_blank">Trading Post Prices</a></p>
+     		  </div>
+            </div><!--/span-->
+          </div><!--/row-->
+      	</div><!--/span-->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Eric Lord 2017</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <!--<script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>-->
+
+  </body>
+</html>
